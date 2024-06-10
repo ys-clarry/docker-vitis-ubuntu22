@@ -21,7 +21,7 @@
   - Copy `~/.Xilinx/wi_authentication_key` into the folder same to `Dockerfile`.
 
 ## Installation
-- Do `docker image build -t ubuntu22-vivado`. It takes a while.
+- Do `docker image build -t ubuntu22-vitis`. It takes a while.
 
 ## Using
 - `xhost +si:localuser:$(whoami)` to give X11 privillage from docker.
@@ -37,7 +37,7 @@ docker container run -it --rm \
     -v /run/user/${UID}:/run/user/${UID}:rw \
     -v ~/vivado:/work \
     -w /work \
-    ubuntu22-vivado
+    ubuntu22-vitis
 ```
 - Notice that container workdir `/work` is in host `~/vivado`, in example.
 
