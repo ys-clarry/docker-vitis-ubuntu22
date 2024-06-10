@@ -44,4 +44,4 @@ docker container run -it --rm \
   - Ubuntu base image is Jammy (22), and I've replaced some packages
   - gosu is installed using apt. (but do I really need this?)
 - 2024/06/10
-  - Now the vitis launches inside the container :)
+  - Now the vitis unified IDE launches inside the container :)
