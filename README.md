@@ -9,23 +9,22 @@
   - Above is based on Tosainu's [blog](https://blog.myon.info/entry/2018/09/15/install-xilinx-tools-into-docker-container/)
 
 ## Before installation
-- Register the ID on AMD's website and download Web installer from there, put it on this folder.
-  - Set the filename to `XILINX_INSTALLER` of `Dockerfile` when differs.
+- Register your ID on AMD's website, download (web) installer.bin from there and put it on this folder.
+  - Set its filename to `XILINX_INSTALLER` in `Dockerfile` when differs.
 - Create authentication token `wi_authentication_key` before making containers.
-  - This is done by `sh your_downloaded_xilinx_web_installer.bin -- -b AuthTokenGen`, and the key will be in `~/.Xilinx` of host machine.
-  - Copy `~/.Xilinx/wi_authentication_key` into here (the folder same to `Dockerfile`).
+  - Make it by `sh your_downloaded_xilinx_web_installer.bin -- -b AuthTokenGen`, and the key will be in `~/.Xilinx` of host machine.
+  - Copy `~/.Xilinx/wi_authentication_key` into the folder same to `Dockerfile`.
 
 ## Tips
-- With this config `Vitis` is installed. If you need only `Vivado` do generate the config (`-- -b ConfigGen`) by yourself.
+- With this config `Vitis` and `Vivado` are installed. If you need only `Vivado` do generate the config (`-- -b ConfigGen`) by yourself.
 - To select devkit(s) of specific FPGA series change `Modules` option of `install_config.txt`.
 
 ## Installation
-- Do `docker image build -t ubuntu22-vivado .`
+- Do `docker image build -t ubuntu22-vivado`. Takes a while with downloading.
 
 ## Using
-- Give X11 privillage from docker using `xhost +si:localuser:$(whoami)` ... if with wayland you'd need `xorg-xhost`.
+- Give X11 privillage from docker using `xhost +si:localuser:$(whoami)` / if with wayland you'd need `xorg-xhost`.
 - Then run the container like below, then call `vivado` or `vitis`
-
 ```
 docker container run -it --rm \
     -e USER_ID=${UID} \
@@ -46,3 +45,5 @@ docker container run -it --rm \
 - 2024/06/09
   - Ubuntu base image is Jammy (22), and I've replaced some packages
   - gosu is installed using apt. (but do I really need this?)
+- 2024/06/10
+  - Now the vitis launches inside the container :)
