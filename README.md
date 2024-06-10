@@ -39,7 +39,7 @@ docker container run -it --rm \
 ```
 
 ## Caveats
-- Not all the functionalities are tested.
+- Not all the functionalities are tested. Connection via USB may not work.
 
 ## Changelog
 - 2024/06/09
