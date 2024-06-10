@@ -1,4 +1,4 @@
-# Dockerfile for AMD(Xilinx) Vitis on Ubuntu (22)
+# Dockerfile for AMD(Xilinx) Vitis with Ubuntu (22)
 
 ## What is this?
 - To use AMD's Vivado and/or Vitis (unified IDE) in docker, to enable use these with distros out of support (in my case, Arch).
