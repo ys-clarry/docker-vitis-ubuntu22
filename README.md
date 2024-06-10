@@ -3,6 +3,7 @@
 ## Disclaimers
 - You should agree to AMD/Xilinx's [EULAs](https://docs.amd.com/r/en-US/ug973-vivado-release-notes-install-license/Running-the-Installer) before installation.
 - I do not guarantee the normal operation of this scripts.
+  - Not all the functionalities are tested. Connections via USB may not work.
   - My used toolkit version is `2024.1`. Different version may cause error.
 - The license of original dockerfile script is unknown, please contact me if related problems arose.
   - Based on laysakura's [scripts](https://github.com/laysakura/docker-ubuntu-vivado)
@@ -14,10 +15,6 @@
 - Create authentication token `wi_authentication_key` before making containers.
   - Make it by `sh your_downloaded_xilinx_web_installer.bin -- -b AuthTokenGen`, and the key will be in `~/.Xilinx` of host machine.
   - Copy `~/.Xilinx/wi_authentication_key` into the folder same to `Dockerfile`.
-
-## Tips
-- With this config `Vitis` and `Vivado` are installed. If you need only `Vivado` do generate the config (`-- -b ConfigGen`) by yourself.
-- To select devkit(s) of specific FPGA series change `Modules` option of `install_config.txt`.
 
 ## Installation
 - Do `docker image build -t ubuntu22-vivado`. Takes a while with downloading.
@@ -38,8 +35,9 @@ docker container run -it --rm \
     ubuntu22-vivado
 ```
 
-## Caveats
-- Not all the functionalities are tested. Connection via USB may not work.
+## Tips
+- With this config `Vitis` and `Vivado` are installed. If you need only `Vivado` do generate the config (`-- -b ConfigGen`) by yourself.
+- To select devkit(s) of specific FPGA series change `Modules` option of `install_config.txt`.
 
 ## Changelog
 - 2024/06/09
