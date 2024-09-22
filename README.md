@@ -4,7 +4,7 @@
 - To use AMD's Vivado and/or Vitis (unified IDE) in docker, to enable use these with distros out of support (in my case, Arch).
 - I'd like to thank to predecessors. The license of original script is unknown, please contact me if related problems arose.
   - laysakura's [github](https://github.com/laysakura/docker-ubuntu-vivado)
-  - Tosainu's [blog](https://blog.myon.info/entry/2018/09/15/install-xilinx-tools-into-docker-container/)
+  - Tosainu's [blog](https://blog.myon.info/entry/2018/09/15/install-xilinx-tools-into-docker-container/) / [New blog](https://myon.info/blog/2024/07/06/vivado-docker/) / [Repo](https://github.com/Tosainu/docker-vivado)
 
 ## Disclaimers
 - You should agree to AMD's [EULAs](https://docs.amd.com/r/en-US/ug973-vivado-release-notes-install-license/Running-the-Installer) before installation.
