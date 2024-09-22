@@ -37,6 +37,7 @@ docker container run -it --rm \
     -v /run/user/${UID}:/run/user/${UID}:rw \
     -v ~/vivado:/work \
     -w /work \
+    --mac-address="02:42:11:11:11:11" \  # To fix MAC addr of container
     ubuntu22-vitis
 ```
 - Notice that container workdir `/work` is in host `~/vivado`, in example.
