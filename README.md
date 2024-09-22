@@ -12,16 +12,14 @@
   - Not all the functionalities are tested. Connections via USB may not work.
   - My used toolkit version is `2024.1`. Different version may cause error.
 
-## Before installation
+## Installation
 1. Register your ID on AMD's website, download (web) installer.bin from there and put it on this folder.
   - Set its filename to `XILINX_INSTALLER` in `Dockerfile` when differs.
   - Also change `TOOLS_VERSION` in `entrypoint.sh` if it's changed.
 2. Create authentication token `wi_authentication_key` before making containers.
   - Make it by `sh your_downloaded_xilinx_web_installer.bin -- -b AuthTokenGen`.
   - Copy `~/.Xilinx/wi_authentication_key` into the folder same to `Dockerfile`.
-
-## Installation
-- Do `docker image build -t ubuntu22-vitis`. It takes a while.
+3. Do `docker image build -t ubuntu22-vitis .`. It takes a while.
 
 ## Using
 - `xhost +si:localuser:$(whoami)` to give X11 privillage from docker.
