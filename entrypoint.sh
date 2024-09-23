@@ -14,6 +14,8 @@ if [[ -n "$USER_ID" ]]; then
   usermod -aG "$UART_GROUP" user
   chown user "$(tty)"
   echo "source /tools/Xilinx/Vivado/${TOOLS_VERSION}/settings64.sh" > /home/user/.bash_profile
+  # Below: workaround for vivado "Abnormal program termination (6)" in implementation
+  echo "export LD_PRELOAD=/lib/x86_64-linux-gnu/libudev.so.1" >> /home/user/.bash_profile
   chown user:user -R /home/user/
   exec /usr/sbin/gosu user "$@"
 else
