@@ -3,7 +3,7 @@ FROM ubuntu:jammy
 ARG XILINX_INSTALLER=FPGAs_AdaptiveSoCs_Unified_2024.1_0522_2023_Lin64.bin
 ENV XILINX_INSTALLER=${XILINX_INSTALLER}
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN \
   sed -i -e "s%http://[^ ]\+%http://ftp.jaist.ac.jp/pub/Linux/ubuntu/%g" /etc/apt/sources.list && \
