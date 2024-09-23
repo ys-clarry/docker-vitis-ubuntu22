@@ -47,13 +47,15 @@ RUN \
 # (3) libnss3.so: cannot open shared object file: No such file or directory -> libnss3
 # (4) libasound.so.2: cannot open shared object file: No such file or directory -> libasound2
 # (5) libsecret-1.so.0: cannot open shared object file: No such file or directory -> libsecret-1-0
+# (6) zip: To enable C/RTL co-simulation
 
 RUN \
   apt update && \
   apt --no-install-recommends -y install \
     language-pack-en nano \
     libtinfo5 libnss3 libasound2 \
-    libsecret-1-0
+    libsecret-1-0 \
+    zip
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
